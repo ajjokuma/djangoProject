@@ -1,0 +1,22 @@
+# Virtual environment:
+djangoProj_venv/
+
+# Compiled Python files:
+*.pyc
+__pycache__/
+
+# Database files (if you're using SQLite):
+db.sqlite3
+
+# Media and static files:
+media/
+static/
+
+# IDE specific settings:
+.vscode/
+.idea/
+
+# Other unnecessary files:
+*.log
+*.tmp
+.DS_Store
