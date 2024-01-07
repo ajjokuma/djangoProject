@@ -1,0 +1,15 @@
+{% extends "halalweb/base.html" %}
+{% block content %}
+    {% for eatery in eateries %}
+        <article class="media content-section">
+          <div class="media-body">
+            <div class="article-metadata">
+              <a class="mr-2" href="#">{{ eatery.address }}</a>
+              <small class="text-muted">{{ eatery.date_posted|date:"F d, Y" }}</small>
+            </div>
+            <h2><a class="article-title" href="#">{{ eatery.title }}</a></h2>
+            <p class="article-content">{{ eatery.description }}</p>
+          </div>
+        </article>
+    {% endfor %}
+{% endblock content %}

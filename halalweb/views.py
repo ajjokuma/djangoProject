@@ -1,8 +1,11 @@
 from django.shortcuts import render
-from django.http import HttpResponse
+from .models import Eatery
 
 def home(request):
-    return HttpResponse('<h1>Halal Web Home<h1>')
+    context = {
+        'eateries': Eatery.objects.all()
+    }
+    return render(request, 'halalweb/home.html', context)
 
 def about(request):
-    return HttpResponse('<h1>Halal Web About<h1>')
+    return render(request, 'halalweb/about.html', {'title': 'About'})
