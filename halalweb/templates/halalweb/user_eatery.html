@@ -1,5 +1,6 @@
 {% extends "halalweb/base.html" %}
 {% block content %}
+<h1 class="mb-3">Eateries Added by {{ view.kwargs.username }}</h1>
     {% for eatery in eateries %}
         <article class="media content-section">
           <img class="rounded-circle article-img" src="{{ eatery.author.profile.image.url }}">

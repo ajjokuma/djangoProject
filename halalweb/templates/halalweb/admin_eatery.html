@@ -1,5 +1,6 @@
 {% extends "halalweb/base.html" %}
 {% block content %}
+<h1 class="mb-3">Approve Eateries</h1>
     {% for eatery in eateries %}
         <article class="media content-section">
           <img class="rounded-circle article-img" src="{{ eatery.author.profile.image.url }}">
@@ -13,9 +14,12 @@
             <div class="article-metadata">
               <a class="mr-2" href="#">{{ eatery.address }}</a>
             </div>
+            <div>
+                <a class="btn btn-secondary btn-sm mt-1 mb-1" href="{% url 'approve-confirm' eatery.id %}"> Approve </a>
+                <a class="btn btn-danger btn-sm mt-1 mb-1" href="{% url 'eatery-delete' eatery.id %}"> Delete </a>
+            </div>
           </div>
         </article>
     {% endfor %}
 {% endblock content %}
 
-<!-- {% url 'profile' eatery.author.id %} -->
